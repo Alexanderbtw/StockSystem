@@ -112,11 +112,17 @@ namespace ModelLib
                 TypeNameHandling = TypeNameHandling.All
             });
 
+            if (!File.Exists("data.json"))
+                File.Create("data.json").Close();
+
             File.WriteAllText("data.json", jsonContent);
         }
 
         public static void LoadFromJson()
         {
+            if (!File.Exists("data.json"))
+                return;
+
             string jsonString = File.ReadAllText("data.json");
 
             Pallets = JsonConvert.DeserializeObject<AsyncObservableCollection<Pallet>>(jsonString, new JsonSerializerSettings
