@@ -1,0 +1,26 @@
+﻿<Window x:Class="StockSystem.PalletWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockSystem"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="PalletWindow" Height="230" Width="300">
+    <StackPanel Margin="10">
+        <TextBlock Text="Ширина, см:" Margin="0 4 0 0"></TextBlock>
+        <TextBox x:Name="tbXlen" Padding="0 3" Text="200" PreviewKeyDown="tb_KeyPressed"></TextBox>
+        <TextBlock Text="Длина, см:" Margin="0 4 0 0"></TextBlock>
+        <TextBox x:Name="tbZlen" Padding="0 3" Text="100" PreviewKeyDown="tb_KeyPressed"></TextBox>
+        <TextBlock Text="Высота, см:" Margin="0 4 0 0"></TextBlock>
+        <TextBox x:Name="tbYlen" Padding="0 3" Text="15" PreviewKeyDown="tb_KeyPressed"></TextBox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCreate" Content="Create" Grid.Column="0" Margin="0 5 5 0" Click="btnCreate_Click"></Button>
+            <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1"  Margin="5 5 0 0" Click="btnCancel_Click"></Button>
+        </Grid>
+    </StackPanel>
+</Window>

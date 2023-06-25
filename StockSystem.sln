@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSystem", "StockSystem.csproj", "{B032CCD5-C448-45F7-8CC7-84AB0C03AD29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLib", "..\ModelLib\ModelLib.csproj", "{16D1A5D9-F64D-49D0-B0E1-D35996D93024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MonopolyTestTask", "MonopolyTestTask", "{F3CF286D-208E-4E06-A069-D67468B06ECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B032CCD5-C448-45F7-8CC7-84AB0C03AD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B032CCD5-C448-45F7-8CC7-84AB0C03AD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B032CCD5-C448-45F7-8CC7-84AB0C03AD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B032CCD5-C448-45F7-8CC7-84AB0C03AD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D1A5D9-F64D-49D0-B0E1-D35996D93024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D1A5D9-F64D-49D0-B0E1-D35996D93024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D1A5D9-F64D-49D0-B0E1-D35996D93024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D1A5D9-F64D-49D0-B0E1-D35996D93024}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B032CCD5-C448-45F7-8CC7-84AB0C03AD29} = {F3CF286D-208E-4E06-A069-D67468B06ECC}
+		{16D1A5D9-F64D-49D0-B0E1-D35996D93024} = {F3CF286D-208E-4E06-A069-D67468B06ECC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E579A43-FC14-4222-8AA5-573262EEC035}
+	EndGlobalSection
+EndGlobal

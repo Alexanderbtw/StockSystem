@@ -1,0 +1,79 @@
+﻿<Window x:Class="StockSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockSystem" 
+        xmlns:modellib="clr-namespace:ModelLib;assembly=ModelLib"
+        mc:Ignorable="d"
+        x:Name="this"
+        Title="MainWindow" Height="450" Width="1060" Closed="Closed_SaveData">
+    <Grid Background="#FFE5E5E5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="lvPallets" Grid.Column="0" SelectedItem="{Binding SelectedPallet, Mode=TwoWay}" SelectionChanged="lvPallets_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Width="100">
+                        <GridViewColumnHeader Content="ID" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding XLen}" Width="100">
+                        <GridViewColumnHeader Content="Ширина, см" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ZLen}" Width="100">
+                        <GridViewColumnHeader Content="Длина, см" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Count}" Width="100">
+                        <GridViewColumnHeader Content="Коробки" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Weight}" Width="100">
+                        <GridViewColumnHeader Content="Вес, кг" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndDate, ConverterCulture=ru-RU}" Width="100">
+                        <GridViewColumnHeader Content="Срок годности" Click="SortPallet" MouseRightButtonDown="SortPalletReverse"/>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="lvBoxes" Grid.Column="1" ItemsSource="{Binding ElementName=lvPallets, Path=SelectedItem.Boxes, Mode=TwoWay}" SelectionChanged="lvBoxes_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Width="100">
+                        <GridViewColumnHeader Content="ID" Click="SortBoxes" MouseRightButtonDown="SortBoxesReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Volume}" Width="100">
+                        <GridViewColumnHeader Content="Объем, см" Click="SortBoxes" MouseRightButtonDown="SortBoxesReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Weight}" Width="100">
+                        <GridViewColumnHeader Content="Вес, кг" Click="SortBoxes" MouseRightButtonDown="SortBoxesReverse"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndDate, ConverterCulture=ru-RU}" Width="100">
+                        <GridViewColumnHeader Content="Срок годности" Click="SortBoxes" MouseRightButtonDown="SortBoxesReverse"/>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Button x:Name="btnAddPallet" Content="Добавить палет" Click="btnAddPallet_Click"/>
+            <Button x:Name="btnGroupPallet" Content="Отсеять по дате" Click="btnGroupPallet_Click"/>
+            <Button x:Name="btnDelPallet" Content="Удалить палет" Click="btnDelPallet_Click" Visibility="Collapsed"/>
+            <Button x:Name="btnPalletInfo" Content="Показать полную информацию (Палета)" Click="btnPalletInfo_Click" Visibility="Collapsed"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button x:Name="btnAddBox" Content="Добавить коробку" Click="btnAddBox_Click" Visibility="Collapsed"/>
+            <Button x:Name="btnDelBox" Content="Удалить коробку" Click="btnDelBox_Click" Visibility="Collapsed"/>
+            <Button x:Name="btnBoxInfo" Content="Показать полную информацию (Коробка)" Click="btnBoxInfo_Click" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Window>
